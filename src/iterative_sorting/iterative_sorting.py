@@ -15,6 +15,21 @@ def selection_sort( arr ):
 
     return arr
 
+def selection_sort2(arr):
+    #divide the array into sorted and unosrted
+    #loop through each element
+    for i in range(0, len(arr)-1):
+        current_index = i
+        smallest_index = current_index
+
+    #find the smallest element in the unsorted
+        for j in range(current_index, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
+    #put the smallest element at the end of the sorted 
+        #swap the first element of unsorted with the smallest element
+        arr[smallest_index], arr[current_index] = arr[current_index], arr[smallest_index]
+    return arr
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
@@ -38,6 +53,7 @@ array1 = [1, 5, 4, 8, 6, 9, 8, 5, 4, 3, 6]
 print(bubble_sort(array1))
 print(bubble_sort2(array1))
 print(selection_sort(array1))
+print(selection_sort2(array1))
 # STRETCH: implement the Count Sort function below
 # def count_sort( arr, maximum=-1 ):
 
