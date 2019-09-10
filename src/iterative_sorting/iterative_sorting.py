@@ -24,8 +24,19 @@ def bubble_sort( arr ):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
     return arr
+#better implementation
+def bubble_sort2(arr):
+    has_swapped = True
+    while has_swapped:
+        has_swapped = False
+        for i in range(0, len(arr) - 1):
+            if arr[i]>arr[i+1]:
+                #swap
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+    return arr
 array1 = [1, 5, 4, 8, 6, 9, 8, 5, 4, 3, 6]
 print(bubble_sort(array1))
+print(bubble_sort2(array1))
 print(selection_sort(array1))
 # STRETCH: implement the Count Sort function below
 # def count_sort( arr, maximum=-1 ):
