@@ -30,8 +30,8 @@ def merge( arrA, arrB ):
             b += 1
     # return this new array
     return merged_arr
-
-
+array1 = [1, 4, 3, 76, 32, 3, 11, 9, 12, 18, 5, 6]
+print()
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
@@ -42,11 +42,11 @@ def merge_sort( arr ):
         # implementing the split
         halfway = len(arr) // 2
         # cutting in half
-        left_array = arr[ : midway_point]
-        right_array = arr[midway_point :]
+        left_array = arr[ : halfway]
+        right_array = arr[halfway :]
         #sort each of the split arrays, recursion
-        sorted_left = merge_sort(left_arr)
-        sorted_right = merge_sort(right_arr)
+        sorted_left = merge_sort(left_array)
+        sorted_right = merge_sort(right_array)
         #this will keep going until length is 1
         #now lets merge the now sorted arrays 
         arr = merge(sorted_left, sorted_right)
