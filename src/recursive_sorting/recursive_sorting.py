@@ -2,6 +2,7 @@
 # we need to sort arrA and arrB
 
 array1 = [1, 4, 3, 76, 32, 3, 11, 9, 12, 18, 5, 6]
+array2 = [1, 4, 3, 76, 32, 3, 11, 9, 12, 18, 100, 200]
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
@@ -18,7 +19,7 @@ def merge( arrA, arrB ):
             #first case, A is empty, b in not
             merged_arr[i] = arrB[b]
             b += 1
-        elif b >= len(arrA):
+        elif b >= len(arrB):
             #second case, A is not empty, b is
             merged_arr[i] = arrA[a]
             a += 1
@@ -55,6 +56,7 @@ def merge_sort( arr ):
     return arr
 
 print(merge_sort(array1))
+print(merge_sort(array2))
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
     # TO-DO
