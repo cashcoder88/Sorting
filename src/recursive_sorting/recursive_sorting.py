@@ -35,7 +35,21 @@ def merge( arrA, arrB ):
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
-
+    # while more than one item in array passed in, we need to split in half!
+    # once we are down to just one element, its officially sorted
+    # a single element can not be out of order, its just one element
+    if len(arr) > 1:
+        # implementing the split
+        halfway = len(arr) // 2
+        # cutting in half
+        left_array = arr[ : midway_point]
+        right_array = arr[midway_point :]
+        #sort each of the split arrays, recursion
+        sorted_left = merge_sort(left_arr)
+        sorted_right = merge_sort(right_arr)
+        #this will keep going until length is 1
+        #now lets merge the now sorted arrays 
+        arr = merge(sorted_left, sorted_right)
     return arr
 
 
