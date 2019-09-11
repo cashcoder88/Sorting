@@ -1,5 +1,7 @@
 # TO-DO: complete the helpe function below to merge 2 sorted arrays
 # we need to sort arrA and arrB
+
+array1 = [1, 4, 3, 76, 32, 3, 11, 9, 12, 18, 5, 6]
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
@@ -8,7 +10,7 @@ def merge( arrA, arrB ):
     b = 0 #current arrA index
     a = 0 #current arrB index
 # for each index in the merged arr: elements
-    for i in range(num_elements):
+    for i in range(elements):
         # find the smallest first-item between arrA and arrB
         #add that to elements at its given index
         # increment the a/b counter to move through indexes
@@ -18,7 +20,7 @@ def merge( arrA, arrB ):
             b += 1
         elif b >= len(arrA):
             #second case, A is not empty, b is
-            merged_arr[i] = arra[a]
+            merged_arr[i] = arrA[a]
             a += 1
         elif arrA[a] < arrB[b]:
             #third case, A has the smaller element
@@ -30,8 +32,8 @@ def merge( arrA, arrB ):
             b += 1
     # return this new array
     return merged_arr
-array1 = [1, 4, 3, 76, 32, 3, 11, 9, 12, 18, 5, 6]
-print()
+
+
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
@@ -52,7 +54,7 @@ def merge_sort( arr ):
         arr = merge(sorted_left, sorted_right)
     return arr
 
-
+print(merge_sort(array1))
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
     # TO-DO
